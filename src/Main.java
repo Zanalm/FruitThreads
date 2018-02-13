@@ -12,7 +12,7 @@ public class Main implements Runnable {
 			System.out.println(toSay);
 	}
 
-	public static void main(String[] args) throws InterruptedException {
+	public static void main(String[] args) {
 		Thread thr1	= new Thread (new Main("hi"));
 		Thread thr2	= new Thread (new Main("bye"));
 		thr1.start();
