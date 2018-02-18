@@ -1,5 +1,5 @@
 
-// the site with this example http://blog.weetech.co/2014/11/how-to-set-java-thread-name-thread-pool.html
+
 public class Main {
 
 	public static void main(String[] args) {
