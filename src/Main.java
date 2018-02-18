@@ -3,6 +3,7 @@
 public class Main {
 
 	public static void main(String[] args) {
+		Bag bag = new Bag();
 		Thread t1 = new Thread(new Person("Bertil")); // Creating 3 new threads
 														// symbolizing persons
 														// with different names
