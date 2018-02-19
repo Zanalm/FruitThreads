@@ -11,8 +11,6 @@ public abstract class Fruit {
 		Random randomInt = new Random();
 		 int randomNumber = randomInt.nextInt((max - min) + 1) + min;
 		 return randomNumber;
-		
-		
 	}
 
 }
