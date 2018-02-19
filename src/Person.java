@@ -4,7 +4,6 @@ public class Person implements Runnable {
 
 	private String name;
 	private int level;
-	// private int energy;
 	private Bag bagOfFruits;
 
 	// Constructor
@@ -30,26 +29,18 @@ public class Person implements Runnable {
 	void Hungry() {
 		while ((level > 0) && Bag.fruitInBag()) {
 			takeEnergy();
-			if ((level < 20) && (level > 0)) {
+			if ((level < 20) && (level > 0)) { // What will happen if a person is hungry (their energy-level is between 0-20)
 				System.out.println(name + " has " + level + " energy and is hungry...");
 				Fruit fruit = takeFruit();
 				if (fruit != null)
 					consumeFruit(fruit);
 			}
 		}
-		if (level <= 0)
-			System.out.println(name + " be dead... Rest In Pieces");
+		if (level <= 0) {
+			System.out.println(name + " starved to death. Poor" + name);
+		}
 		else
-			System.out.println("Bag is empty... " + name + " is leaving the party");
-
-		/*
-		 * if (level > 20) { // do what when not hungry takeEnergy(); // the person will
-		 * keep on losing energy //System.out.println("not hungry" + level); } else if
-		 * (level <= 20 && level >= 0) { // sets the hungry-interval // do what when
-		 * hungry?? System.out.println(name +
-		 * " is dying for some more fruit. Energy level: " + level); int getEnergy =
-		 * bag.RemoveFruit(); level += getEnergy; }
-		 */
+			System.out.println("We ran out of fruits in the bag. " + name + " is now going home");
 	}
 
 	private Fruit takeFruit() {
@@ -72,7 +63,7 @@ public class Person implements Runnable {
 
 	@Override
 	public void run() {
-		while (level > 10) {
+		while (level > 10) { // will run while energy-level is above 10
 			takeEnergy();
 			Hungry();
 		}

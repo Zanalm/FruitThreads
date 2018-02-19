@@ -13,6 +13,7 @@ public class Main {
 		t2.start();
 		t3.start();
 		
+		// it never enters the if-statement
 		while (true) {
 			if (bag.emptyBag()) {
 				System.out.println("jhgkgh");
