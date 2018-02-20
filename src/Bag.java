@@ -15,12 +15,13 @@ public class Bag {
 		Fruit fruit = null;
 		if (fruitBag.size() > 0) {
 			fruit = fruitBag.get(0);
+			System.out.println("----Bag now contains: " + fruitBag.size() + " fruits----");
 			fruitBag.remove(0);
 			RandomFruit();
 		} else {
 			System.out.println("Fruit bag is empty. Exiting.");
+			System.exit(1);
 		}
-		System.out.println("----Bag now contains: " + fruitBag.size() + " fruits----");
 		return fruit;
 	}
 
@@ -45,7 +46,7 @@ public class Bag {
 			}
 			if (fruit == null) {
 				System.out.println("Failed creating fruit. Exiting...");
-				// System.exit(1);
+				 System.exit(1);
 			}
 			fruitBag.add(fruit);
 			System.out.println(
@@ -62,14 +63,6 @@ public class Bag {
 
 	}
 
-	// get this to work... threads should terminate when bag is empty
-	public boolean emptyBag() {
-		boolean a = false;
-		if (fruitBag.size() == 0) {
-			System.out.println("innanför");
-			a = true;
-		}
-		return a;
-	}
+
 
 }
